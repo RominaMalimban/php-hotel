@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Php Hotel</title>
-</head>
 
-<body>
     <?php
-
-    // array di hotels: 
+    // array di Hotels: 
     $hotels = [
         [
             'name' => 'Hotel Belvedere',
@@ -53,22 +50,50 @@
         ],
 
     ];
-
-    // ciclo per stampare su pagina hotel con dati: 
-    foreach ($hotels as $hotel) {
-        echo $name = $hotel["name"] . '<br>';
-        echo $description = $hotel["description"] . '<br>';
-
-        if ($hotel["parking"] === true) {
-            echo 'Parking: Available' . '<br>';
-        } else {
-            echo 'Parking: Not Available' . '<br>';
-        }
-
-        echo 'Vote' . ' ' . $vote = $hotel["vote"] . '<br>';
-        echo 'Distance to Center' . ' ' . $distanceToCenter = $hotel["distance_to_center"] . 'km' . '<br>';
-    }
     ?>
+</head>
+
+<body>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Hotel Name</th>
+                <th scope="col">Hotel Description</th>
+                <th scope="col">Hotel Parking</th>
+                <th scope="col">Hotel Vote</th>
+                <th scope="col">Hotel distance to center</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+
+            // ciclo per stampare su pagina hotel con dati: 
+            foreach ($hotels as $hotel) {
+                $name = $hotel["name"];
+                $description = $hotel["description"];
+                $parking = $hotel["parking"];
+                $vote = $hotel["vote"];
+                $distanceToCenter = $hotel["distance_to_center"];
+
+                echo '<tr>';
+                echo '<th scope="row">' . $name . '</th>';
+                echo '<td>' . $description . '</td>';
+
+                // condizione per parcheggio:
+                if ($parking === true) {
+                    echo '<td>' . 'Parking Available' . '</td>';
+                } else {
+                    echo '<td>' . 'Parking not Available' . '</td>';
+                }
+
+                echo '<td>' . $vote . '</td>';
+                echo '<td>' . $distanceToCenter . ' ' . 'km' . '</td>';
+                echo '</tr>';
+            }
+            ?>
+        </tbody>
+    </table>
 
     <!-- Js Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384- 
