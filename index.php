@@ -9,7 +9,57 @@
 </head>
 
 <body>
+    <?php
 
+    // array di hotels: 
+    $hotels = [
+        [
+            'name' => 'Hotel Belvedere',
+            'description' => 'Hotel Belvedere Descrizione',
+            'parking' => true,
+            'vote' => 4,
+            'distance_to_center' => 10.4
+        ],
+        [
+            'name' => 'Hotel Futuro',
+            'description' => 'Hotel Futuro Descrizione',
+            'parking' => true,
+            'vote' => 2,
+            'distance_to_center' => 2
+        ],
+        [
+            'name' => 'Hotel Rivamare',
+            'description' => 'Hotel Rivamare Descrizione',
+            'parking' => false,
+            'vote' => 1,
+            'distance_to_center' => 1
+        ],
+        [
+            'name' => 'Hotel Bellavista',
+            'description' => 'Hotel Bellavista Descrizione',
+            'parking' => false,
+            'vote' => 5,
+            'distance_to_center' => 5.5
+        ],
+        [
+            'name' => 'Hotel Milano',
+            'description' => 'Hotel Milano Descrizione',
+            'parking' => true,
+            'vote' => 2,
+            'distance_to_center' => 50
+        ],
+
+    ];
+
+    // ciclo per stampare su pagina hotel con dati: 
+    foreach ($hotels as $hotel) {
+        echo $name = $hotel["name"] . '<br>';
+        echo $description = $hotel["description"] . '<br>';
+        echo $parking = $hotel["parking"] . '<br>';
+        echo $vote = $hotel["vote"] . '<br>';
+        echo $distanceToCenter = $hotel["distance_to_center"] . '<br>';
+    }
+    ?>
 </body>
 
 </html>
