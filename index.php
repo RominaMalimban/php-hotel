@@ -55,9 +55,15 @@
     foreach ($hotels as $hotel) {
         echo $name = $hotel["name"] . '<br>';
         echo $description = $hotel["description"] . '<br>';
-        echo $parking = $hotel["parking"] . '<br>';
-        echo $vote = $hotel["vote"] . '<br>';
-        echo $distanceToCenter = $hotel["distance_to_center"] . '<br>';
+
+        if ($hotel["parking"] === true) {
+            echo 'Parking: Available' . '<br>';
+        } else {
+            echo 'Parking: Not Available' . '<br>';
+        }
+
+        echo 'Vote' . ' ' . $vote = $hotel["vote"] . '<br>';
+        echo 'Distance to Center' . ' ' . $distanceToCenter = $hotel["distance_to_center"] . 'km' . '<br>';
     }
     ?>
 </body>
