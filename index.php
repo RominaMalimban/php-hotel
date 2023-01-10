@@ -55,8 +55,8 @@
 
 <body>
 
-    <table class="table">
-        <thead>
+    <table class="table table-hover">
+        <thead class="table-dark">
             <tr>
                 <th scope="col">Hotel Name</th>
                 <th scope="col">Hotel Description</th>
