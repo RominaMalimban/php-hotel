@@ -67,31 +67,37 @@
         </thead>
         <tbody>
             <?php
-
             // ciclo per stampare su pagina hotel con dati: 
             foreach ($hotels as $hotel) {
+
+                // variabili per ricavare valore keys:
                 $name = $hotel["name"];
                 $description = $hotel["description"];
                 $parking = $hotel["parking"];
                 $vote = $hotel["vote"];
                 $distanceToCenter = $hotel["distance_to_center"];
+                ?>
+                <tr>
+                    <th scope="row">
+                        <?php echo $name ?>
+                    </th>
+                    <td>
+                        <?php echo $description ?>
+                    </td>
 
-                echo '<tr>';
-                echo '<th scope="row">' . $name . '</th>';
-                echo '<td>' . $description . '</td>';
+                    <!-- condizione per parcheggio: -->
+                    <td>
+                        <?php echo $parking ? 'Parking Available' : 'Parking not Available' ?>
+                    </td>
 
-                // condizione per parcheggio:
-                if ($parking === true) {
-                    echo '<td>' . 'Parking Available' . '</td>';
-                } else {
-                    echo '<td>' . 'Parking not Available' . '</td>';
-                }
-
-                echo '<td>' . $vote . '</td>';
-                echo '<td>' . $distanceToCenter . ' ' . 'km' . '</td>';
-                echo '</tr>';
-            }
-            ?>
+                    <td>
+                        <?php echo $vote ?>
+                    </td>
+                    <td>
+                        <?php echo $distanceToCenter . ' km' ?>
+                    </td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
 
